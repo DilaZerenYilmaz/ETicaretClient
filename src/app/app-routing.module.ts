@@ -1,7 +1,43 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './admin/layout/layout.component';
+import { DashboardComponent } from './admin/admin.components/dashboard/dashboard.component';
+import { HomeComponent } from './ui/ui.components/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: "admin", component: LayoutComponent, children: [
+      { path: "", component: DashboardComponent },
+      {
+        path: "customers",
+        loadChildren: () => import('./admin/admin.components/customers/customers.module')
+          .then(m => m.CustomersModule)
+      },
+      {
+        path: "products",
+        loadChildren: () => import('./admin/admin.components/products/products.module')
+          .then(m => m.ProductsModule)
+      },
+      {
+        path: "orders",
+        loadChildren: () => import('./admin/admin.components/orders/orders.module')
+          .then(m => m.OrdersModule)
+      }
+    ]
+  },
+  { path: "", component: HomeComponent },
+  {
+    path: "baskets",
+    loadChildren: () => import('./ui/ui.components/baskets/baskets.module')
+      .then(m => m.BasketsModule)
+  },
+  {
+    path: "products",
+    loadChildren: () => import('./ui/ui.components/products/products.module')
+      .then(m => m.ProductsModule)
+  }
+];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,26 @@
+.admin-container {
+  width: 99%;
+  height: 700px;
+  margin: 10px;
+  border: 1px solid #555;
+  /* The background property is added to clearly distinguish the borders between drawer and main
+     content */
+  background: #eee;
+}
+
+mat-drawer {
+  background: white;
+  /* Sidebar beyaz */
+  color: black;
+}
+
+mat-drawer-content {
+  background: rgb(188, 188, 188);
+  /* İçerik beyaz */
+  color: black;
+}
+
+.admin-left {
+  width: 200px;
+  /* Sol kenar çubuğu genişliği */
+}
