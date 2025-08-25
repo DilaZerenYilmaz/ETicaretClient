@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-declare var $: any; // Declare jQuery globally
 
 @Component({
   selector: 'app-root',
@@ -10,6 +9,3 @@ export class AppComponent {
   title = 'ETicaretClient-new';
 }
 
-$(document).ready(() => {
-  alert("jQuery is working!");
-});

@@ -1,26 +1,17 @@
 .admin-container {
-  width: 99%;
-  height: 700px;
-  margin: 10px;
-  border: 1px solid #555;
-  /* The background property is added to clearly distinguish the borders between drawer and main
-     content */
-  background: #eee;
-}
-
-mat-drawer {
-  background: white;
-  /* Sidebar beyaz */
-  color: black;
-}
-
-mat-drawer-content {
-  background: rgb(188, 188, 188);
-  /* İçerik beyaz */
-  color: black;
+  height: calc(100vh - 100px); // Header ve footer'ı çıkarmak için
+  display: flex;
 }
 
 .admin-left {
-  width: 200px;
-  /* Sol kenar çubuğu genişliği */
+  width: 220px;
+  background: linear-gradient(180deg, #365e86, #36699c);
+  color: white;
+  padding: 20px 10px;
+}
+
+mat-drawer-content {
+  flex: 1;
+  padding: 20px;
+  background: #f4f6f9;
 }
