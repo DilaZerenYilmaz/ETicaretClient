@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
 
 @Component({
   selector: 'app-ui-products',
@@ -6,6 +8,12 @@ import { Component } from '@angular/core';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent {
+export class ProductsComponent extends BaseComponent {
+  constructor(spinner: NgxSpinnerService) {
+    super(spinner);
+  }
 
+  ngOnInit(): void {
+    this.showSpinner(SpinnerType.BallAtom);
+  }
 }
