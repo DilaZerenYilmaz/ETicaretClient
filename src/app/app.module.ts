@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BaseComponent } from './base/base.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,9 +24,12 @@ import { BaseComponent } from './base/base.component';
     AdminModule, UiModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'baseUrl', useValue: 'https://localhost:7084/api', multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
